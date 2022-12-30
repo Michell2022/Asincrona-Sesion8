@@ -14,7 +14,7 @@
     <br>
     <input type="number" #edad>
   </p>
-  <button (click)="registrarDato()">Agregar dato</button>
+  <button (click)="registrarDato(nombre.value)">Agregar dato</button>
   <br>
   <br>
   <table class="table table-bordered">
@@ -28,10 +28,10 @@
     </thead>
     <tbody>
       <tr>
-        <!-- <td>{{nom[0]}}}</td>
-        <td>{{nom[1]}}}</td>
-        <td>{{nom[2]}}}</td>
-        <td>{{nom[3]}}}</td> -->
+        <td>{{nom[0]}}</td>
+        <td>{{nom[1]}}</td>
+        <td>{{nom[2]}}</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

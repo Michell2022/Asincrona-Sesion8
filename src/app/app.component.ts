@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  nom=['michell']
 
-  registrarDato(){
+  registrarDato(nombre:string, apellido:string, edad:number){
 
-
+    this.nom.push(String(nombre));
   }
 }
