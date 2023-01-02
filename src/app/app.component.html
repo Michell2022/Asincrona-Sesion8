@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-lg-8 col-md-9 col-sm-10 col-11 columna__borde">
       <div class="formulario">
-        <h1>VALIDACIONES</h1>
+        <h1>CONDICIONES</h1>
         <p>
           <label class="form-label">Nombre:</label>
           <br>
-          <input class="form-control" type="text" #nombre>
+          <input class="form-control" type="text" #nombre >
         </p>
         <p>
           <label class="form-label">Apellido:</label>
@@ -16,7 +16,7 @@
         <p>
           <label class="form-label">Edad:</label>
           <br>
-          <input class="form-control" type="text" #edad>
+          <input class="form-control" type="number" #edad>
         </p>
         <button (click)="registrarDato(nombre.value, apellido.value, edad.value)">Agregar datos</button>
         <br>
