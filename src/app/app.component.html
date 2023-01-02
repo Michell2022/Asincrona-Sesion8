@@ -1,41 +1,48 @@
 <div class="container">
-  <p>
-    <label>Nombre</label>
-    <br>
-    <input type="text" #nombre>
-  </p>
-  <p>
-    <label>Apellido</label>
-    <br>
-    <input type="text" #apellido>
-  </p>
-  <p>
-    <label>Edad</label>
-    <br>
-    <input type="text" #edad>
-  </p>
-  <button (click)="registrarDato(nombre.value, apellido.value, edad.value)">Agregar dato</button>
-  <br>
-  <br>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
-        <th scope="col">Edad</th>
-        <th scope="col">Condición</th>
-      </tr>
-    </thead>
-      <tbody>
-      <tr *ngFor="let nom of datos">
-        <td>{{nom.nombre}}</td>
-        <td>{{nom.apellido}}</td>
-        <td>{{nom.edad}}</td>
-        <td>{{nom.condicion}}
-          <p *ngIf="nom.edad >= 18">{{nom.nombre}} es mayor</p>
-          <p *ngIf="nom.edad < 18">{{nom.nombre}} es menor</p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-lg-8 col-md-9 col-sm-10 col-11 columna__borde">
+      <div class="formulario">
+        <h1>VALIDACIONES</h1>
+        <p>
+          <label class="form-label">Nombre:</label>
+          <br>
+          <input class="form-control" type="text" #nombre>
+        </p>
+        <p>
+          <label class="form-label">Apellido:</label>
+          <br>
+          <input class="form-control" type="text" #apellido>
+        </p>
+        <p>
+          <label class="form-label">Edad:</label>
+          <br>
+          <input class="form-control" type="text" #edad>
+        </p>
+        <button (click)="registrarDato(nombre.value, apellido.value, edad.value)">Agregar datos</button>
+        <br>
+        <br>
+      </div>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Condición</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let nom of datos">
+            <td>{{nom.nombre}}</td>
+            <td>{{nom.apellido}}</td>
+            <td>{{nom.edad}}</td>
+            <td>{{nom.condicion}}
+              <p class="m-0" *ngIf="nom.edad >= 18">{{nom.nombre}} es mayor</p>
+              <p class="m-0" *ngIf="nom.edad < 18">{{nom.nombre}} es menor</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
