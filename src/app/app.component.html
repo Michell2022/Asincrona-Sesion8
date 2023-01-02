@@ -12,26 +12,29 @@
   <p>
     <label>Edad</label>
     <br>
-    <input type="number" #edad>
+    <input type="text" #edad>
   </p>
-  <button (click)="registrarDato(nombre.value)">Agregar dato</button>
+  <button (click)="registrarDato(nombre.value, apellido.value, edad.value)">Agregar dato</button>
   <br>
   <br>
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Edad</th>
-        <th>Condición</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Condición</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>{{nom[0]}}</td>
-        <td>{{nom[1]}}</td>
-        <td>{{nom[2]}}</td>
-        <td></td>
+      <tbody>
+      <tr *ngFor="let nom of datos">
+        <td>{{nom.nombre}}</td>
+        <td>{{nom.apellido}}</td>
+        <td>{{nom.edad}}</td>
+        <td>{{nom.condicion}}
+          <p *ngIf="nom.edad >= 18">{{nom.nombre}} es mayor</p>
+          <p *ngIf="nom.edad < 18">{{nom.nombre}} es menor</p>
+        </td>
       </tr>
     </tbody>
   </table>

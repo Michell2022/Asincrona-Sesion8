@@ -7,10 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  nom=['michell']
+  datos: any = [{
+    nombre: 'michell',
+    apellido:'quispe',
+    edad:'29'
+  }];
 
-  registrarDato(nombre:string, apellido:string, edad:number){
+  registrarDato(nombre:string, apellido:string, edad:string){
 
-    this.nom.push(String(nombre));
+  parseInt(edad);
+
+    this.datos.push({
+      nombre,apellido,edad
+    });
   }
 }
